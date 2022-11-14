@@ -88,3 +88,5 @@ autostart
 nnvvim/undodir
 nnvvim/undodir
 nnvvim/undodir
+.tags
+tags
