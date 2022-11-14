@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	number	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/pi72/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+M.on_attach	lua/user/lsp/handlers.lua	75;"	f
+M.setup	lua/user/lsp/handlers.lua	4;"	f
+["<S-Tab>"]	lua/user/cmp.lua	82;"	f
+["<Tab>"]	lua/user/cmp.lua	66;"	f
+["<leader>jp"]	lua/user/treesitter.lua	127;"	f
+["[M"]	lua/user/treesitter.lua	110;"	f
+["[m"]	lua/user/treesitter.lua	106;"	f
+["]M"]	lua/user/treesitter.lua	102;"	f
+["]m"]	lua/user/treesitter.lua	98;"	f
+["af"]	lua/user/treesitter.lua	88;"	f
+["if"]	lua/user/treesitter.lua	89;"	f
+["target-windows"]	lua/user/leap.lua	27;"	f
+_BTOP_TOGGLE	lua/user/toggleterm.lua	51;"	f
+_G.set_terminal_keymaps	lua/user/toggleterm.lua	23;"	f
+_LAZYGIT_TOGGLE	lua/user/toggleterm.lua	36;"	f
+_LUA_TOGGLE	lua/user/toggleterm.lua	46;"	f
+_NODE_TOGGLE	lua/user/toggleterm.lua	41;"	f
+_PYTHON_TOGGLE	lua/user/toggleterm.lua	56;"	f
+callback	lua/user/autocommands.lua	15;"	f
+callback	lua/user/autocommands.lua	26;"	f
+callback	lua/user/autocommands.lua	36;"	f
+callback	lua/user/autocommands.lua	43;"	f
+callback	lua/user/autocommands.lua	4;"	f
+check_backspace	lua/user/cmp.lua	13;"	f
+close_command	lua/user/bufferline.lua	8;"	f
+config	lua/user/plugins.lua	100;"	f
+config	lua/user/plugins.lua	91;"	f
+dap.listeners.after.event_initialized["dapui_config"]	lua/user/dap.lua	37;"	f
+dap.listeners.before.event_exited["dapui_config"]	lua/user/dap.lua	45;"	f
+dap.listeners.before.event_terminated["dapui_config"]	lua/user/dap.lua	41;"	f
+description	lua/user/lsp/settings/jsonls.lua	109;"	f
+error_msg	plugin/packer_compiled.lua	10;"	f
+expand	lua/user/cmp.lua	48;"	f
+extend	lua/user/lsp/settings/jsonls.lua	171;"	f
+footer	lua/user/alpha.lua	24;"	f
+format	lua/user/cmp.lua	97;"	f
+hide_in_width	lua/user/lualine.lua	6;"	f
+init	lua/user/hover.lua	8;"	f
+lazy_load_module	plugin/packer_compiled.lua	403;"	f
+leap_all_windows	lua/user/leap.lua	25;"	f
+lsp_highlight_document	lua/user/lsp/handlers.lua	47;"	f
+lsp_keymaps	lua/user/lsp/handlers.lua	55;"	f
+open_fn	lua/user/plugins.lua	35;"	f
+pre_hook	lua/user/comment.lua	7;"	f
+right_mouse_command	lua/user/bufferline.lua	9;"	f
+save_profiles	plugin/packer_compiled.lua	29;"	f
+spaces	lua/user/lualine.lua	44;"	f
+time	plugin/packer_compiled.lua	18;"	f
+time	plugin/packer_compiled.lua	26;"	f
+try_loadstring	plugin/packer_compiled.lua	59;"	f

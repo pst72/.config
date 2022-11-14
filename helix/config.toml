@@ -1,0 +1,58 @@
+
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = true
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = true
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'<' = '>'
+
+[editor.whitespace]
+render = "all"
+# or control each character
+# [editor.whitespace.render]
+# space = "all"
+# tab = "all"
+# newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+# At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
+[keys.normal]
+"A-q" = ":q" # Maps the space-q to the typable command :q which is an alias for :quit (quit helix)
+"A-x" = ":bc" # Maps the space-x to the typable command :bc which is an alias for :buffer-close(close buffer)
+# C-o = ":open ~/.config/helix/config.toml" # Maps the Control-o to opening of the helix config file
+# a = "move_char_left" # Maps the 'a' key to the move_char_left command
+# w = "move_line_up" # Maps the 'w' key move_line_up
+# "C-S-esc" = "extend_line" # Maps Control-Shift-Escape to extend_line
+# g = { a = "code_action" } # Maps `ga` to show possible code actions
+# "ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+
+# [keys.insert]
+# "A-x" = "normal_mode" # Maps Alt-X to enter normal mode
+# j = { k = "normal_mode" } # Maps `jk` to exit insert mode
