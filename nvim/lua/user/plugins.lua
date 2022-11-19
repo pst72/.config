@@ -83,6 +83,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
 	use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
+	use({ "hrsh7th/cmp-nvim-lsp-document-symbol" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
@@ -102,17 +103,17 @@ return packer.startup(function(use)
 	use({ "ray-x/guihua.lua", run = "cd lua/fzy && make" })
 	use({
 		"ray-x/navigator.lua",
-		config = function()
-			require("navigator").setup({
-				-- debug = true,
-				mason = true,
-				-- keymaps = {
-				--   { key = 'gr',
-				--     func = "require(navigator.reference).async_ref()"
-				--   }
-				-- },
-			})
-		end,
+		-- config = function()
+		-- 	require("navigator").setup({
+		-- 		-- debug = true,
+		-- 		mason = true,
+		-- 		-- keymaps = {
+		-- 		--   { key = 'gr',
+		-- 		--     func = "require(navigator.reference).async_ref()"
+		-- 		--   }
+		-- 		-- },
+		-- 	})
+		-- end,
 	})
 	use({ "ray-x/lsp_signature.nvim" })
 	use({ "lewis6991/hover.nvim" })

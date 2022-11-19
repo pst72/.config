@@ -1,53 +1,38 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, lsp_installer = pcall(require, "mason.nvim")
 if not status_ok then
   return
 end
 
 local servers = {
-  "sumneko_lua",
-  "cssls",
-  "html",
-  "tsserver",
-  -- "prettier",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+	"sumneko_lua",
+	"cssls",
+	"html",
+	"tsserver",
+	-- "prettier",
+	"pyright",
+	"bashls",
+	"jsonls",
+	"yamlls",
 }
-
-lsp_installer.setup()
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
-  return
+	return
 end
 
-local opts = {}
+lsp_installer.setup({
+	ensure_installed = servers,
+})
 
 for _, server in pairs(servers) do
-  opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
-  }
+	local opts = {
+		on_attach = require("user.lsp.handlers").on_attach,
+		capabilities = require("user.lsp.handlers").capabilities,
+	}
+	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
+	if has_custom_opts then
+		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
+	end
 
-  if server == "sumneko_lua" then
-    local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-  end
-
-  if server == "pyright" then
-    local pyright_opts = require "user.lsp.settings.pyright"
-    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-  end
-
-  -- if server == "prettier" then
-  --   local prettier_opts = require "user.lsp.settings.jsonls"
-  --   opts = vim.tbl_deep_extend("force", prettier_opts, opts)
-  -- end
-
-  --[[ if server == "prettier" then
-    local prettier_opts = require "user.lsp.settings.prettier"
-    opts = vim.tbl_deep_extend("force", prettier_opts, opts)
-  end ]]
-  lspconfig[server].setup(opts)
+	lspconfig[server].setup(opts)
 end

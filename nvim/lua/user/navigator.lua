@@ -45,6 +45,7 @@ nav.setup({
   --  signature_help_cfg = nil, -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
   icons = {
     -- Code action
+    icons = false,
     code_action_icon = "🏏", -- note: need terminal support, for those not support unicode, might crash
     -- Diagnostics
     diagnostic_head = "🐛",
@@ -52,7 +53,7 @@ nav.setup({
     -- refer to lua/navigator.lua for more icons setups
   },
   lsp_installer = false, -- set to true if you would like use the lsp installed by williamboman/nvim-lsp-installer
-  mason = true, -- set to true if you would like use the lsp installed by williamboman/mason
+  mason = false, -- set to true if you would like use the lsp installed by williamboman/mason
   lsp = {
     enable = true, -- skip lsp setup if disabled make sure add require('navigator.lspclient.mapping').setup() in you
     -- own on_attach

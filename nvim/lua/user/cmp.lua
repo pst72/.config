@@ -18,9 +18,9 @@ end
 local kind_icons = {
   Text = "",
   Method = "",
-  Function = "",
+  Function = "𝐅",
   Constructor = "",
-  Field = "",
+  Field = "��",
   Variable = "",
   Class = "",
   Interface = "",
@@ -29,8 +29,8 @@ local kind_icons = {
   Unit = "",
   Value = "",
   Enum = "",
-  Keyword = "",
-  Snippet = "",
+  Keyword = "��",
+  Snippet = "",
   Color = "",
   File = "",
   Reference = "",
@@ -95,7 +95,7 @@ cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      vim_item.kind = kind_icons[vim_item.kind]
+      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
       vim_item.menu = ({
         nvim_lsp = "",
         nvim_lua = "",
@@ -140,7 +140,9 @@ cmp.setup.cmdline(":", {
 })
 cmp.setup.cmdline("/", {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = {
+  sources = cmp.config.sources({
+    { name = "nvim_lsp_document_symbol" },
+  }, {
     { name = "buffer" },
-  },
+  }),
 })
