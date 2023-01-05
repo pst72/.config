@@ -85,6 +85,11 @@ user-dirs.locale
 z
 astro
 autostart
+**/node_modules
+**/_cacache
+npm/
+java/
+audacious/
 nnvvim/undodir
 nnvim/undodir
 .tags
