@@ -1,6 +1,7 @@
-vim.cmd [[set termguicolors]]
+vim.cmd([[set termguicolors]])
 
 require("pst.plugins")
+require("pst.noice")
 require("pst.colorscheme")
 require("pst.autocommands")
 require("pst.cheat")
@@ -11,7 +12,8 @@ require("pst.colorizer")
 require("pst.options")
 require("pst.cmp")
 require("pst.comment")
--- require("pst.gitsigns")
+require("pst.gitsigns")
+require("pst.chatgpt")
 require("pst.indentline")
 require("pst.glow")
 require("pst.leap")
