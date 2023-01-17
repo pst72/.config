@@ -90,6 +90,9 @@ autostart
 npm/
 java/
 audacious/
+nvim/plugin/packer_compiled.lua
+i3blocks/scripts
+nvim.bak/
 nnvvim/undodir
 nnvim/undodir
 .tags
