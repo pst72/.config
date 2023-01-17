@@ -93,6 +93,7 @@ require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
 	use("lewis6991/gitsigns.nvim")
+	use("rmagatti/alternate-toggler")
 
 	-- DAP
 	use({ "mfussenegger/nvim-dap" })

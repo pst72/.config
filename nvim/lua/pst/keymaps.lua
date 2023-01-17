@@ -12,11 +12,11 @@ vim.g.maplocalleader = " "
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
 })
 
 -- Modes
@@ -80,6 +80,9 @@ keymap("n", "<leader>Q", "<cmd>quit!<CR>", { desc = "Exit Neovim WITHOUT Saving"
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
+-- Select All
+keymap("n", "<C-a>", "gg<S-v>G", { desc = "Select All" })
+
 --No register for x
 -- keymap("n", "x", '"_x')
 
@@ -116,18 +119,18 @@ keymap("n", "<C-s>", "<cmd>Telescope symbols<cr>", { desc = "Insert symbols / Em
 
 -- Comment
 keymap(
-  "n",
-  "<leader>c",
-  "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
-  { desc = "Comment out line" },
-  opts
+	"n",
+	"<leader>c",
+	"<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
+	{ desc = "Comment out line" },
+	opts
 )
 keymap(
-  "x",
-  "<leader>c",
-  '<ESC><CMD>lua require("Comment.api").toggle.linewise.op(vim.fn.visualmode())<CR>',
-  { desc = "Comment out Visual Selection" },
-  opts
+	"x",
+	"<leader>c",
+	'<ESC><CMD>lua require("Comment.api").toggle.linewise.op(vim.fn.visualmode())<CR>',
+	{ desc = "Comment out Visual Selection" },
+	opts
 )
 keymap("n", "<leader>?", "<cmd>Cheatsheet<CR>", { desc = "Cheatsheet for Commands" }, opts)
 -- DAP

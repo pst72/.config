@@ -121,7 +121,7 @@ noice.setup({
 			["cmp.entry.get_documentation"] = true,
 		},
 		hover = {
-			enabled = false,
+			enabled = true,
 			view = nil, -- when nil, use defaults from documentation
 			-- -@type NoiceViewOptions
 			opts = {}, -- merged with defaults from documentation
@@ -158,10 +158,6 @@ noice.setup({
 		},
 	},
 	markdown = {
-		hover = {
-			["|(%S-)|"] = vim.cmd.help, -- vim help links
-			["%[.-%]%((%S-)%)"] = require("noice.util").open, -- markdown links
-		},
 		highlights = {
 			["|%S-|"] = "@text.reference",
 			["@%S+"] = "@parameter",
@@ -169,6 +165,10 @@ noice.setup({
 			["^%s*(Return:)"] = "@text.title",
 			["^%s*(See also:)"] = "@text.title",
 			["{%S-}"] = "@parameter",
+		},
+		hover = {
+			["|(%S-)|"] = vim.cmd.help, -- vim help links
+			["%[.-%]%((%S-)%)"] = require("noice.util").open, -- markdown links
 		},
 	},
 	health = {
