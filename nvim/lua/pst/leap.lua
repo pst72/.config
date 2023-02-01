@@ -20,22 +20,11 @@ leap.setup({
 		eol = "<space>",
 	},
 })
-require("leap").set_default_keymaps()
--- Searching in all windows (including the current one) on the tab page:
--- local function leap_all_windows()
--- 	require("leap").leap({
--- 		["target-windows"] = vim.tbl_filter(function(win)
--- 			return vim.api.nvim_win_get_config(win).focusable
--- 		end, vim.api.nvim_tabpage_list_wins(0)),
--- 	})
--- end
+require("leap").add_default_mappings()
 
 -- Bidirectional search in the current window is just a specific case of the
--- multi-window mode - set `target-windows` to a table containing the current
--- window as the only element:
--- function leap_bidirectional()
--- 	require("leap").leap({ ["target-windows"] = { vim.api.nvim_get_current_win() } })
--- end
+-- multi-window mode
+require("leap").leap({ target_windows = { vim.fn.win_getid() } })
 
 -- Map them to your preferred key, like:
 -- vim.keymap.set("n", "s", leap_all_windows, { silent = true })

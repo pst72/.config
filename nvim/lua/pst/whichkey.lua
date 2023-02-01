@@ -115,7 +115,7 @@ local mappings = {
 		-- p = { "<cmd>Telescope projects<cr>", " Find Projects" },
 	},
 
-	G = {
+	g = {
 		name = "Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },

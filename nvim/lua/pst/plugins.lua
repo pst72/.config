@@ -36,6 +36,23 @@ require("packer").startup(function(use)
 			"j-hui/fidget.nvim",
 		},
 	})
+	use({
+		"Exafunction/codeium.vim",
+		config = function()
+			-- vim.keymap.set("i", "<c-;>", function()
+			-- 	return vim.fn["codeium#CycleCompletions"](1)
+			-- end, { expr = true })
+			-- vim.keymap.set("i", "<c-,>", function()
+			-- 	return vim.fn["codeium#CycleCompletions"](-1)
+			-- end, { expr = true })
+			vim.keymap.set("i", "<C-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<C-g>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+		end,
+	})
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "ray-x/guihua.lua", run = "cd lua/fzy && make" })
 	use({ "ray-x/navigator.lua" })
@@ -69,6 +86,7 @@ require("packer").startup(function(use)
 	use({ "nvim-treesitter/playground", after = "nvim-treesitter" })
 	-- use({ "nvim-treesitter/nvim-treesitter-refactor", after = 'nvim-treesitter', })
 
+	use({ "echuraev/translate-shell.vim" })
 	use({ "lewis6991/hover.nvim" })
 	use({ "folke/trouble.nvim" })
 	use({ "folke/which-key.nvim" })

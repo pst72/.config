@@ -6,21 +6,21 @@ vim.cmd([[
      augroup END
     ]])
 vim.api.nvim_exec(
-  [[
+	[[
   au CursorHoldI * stopinsert
   au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
   au InsertLeave * let &updatetime=updaterestore
-]] ,
-  false
+]],
+	false
 )
 vim.api.nvim_exec(
-  [[
+	[[
   augroup SetMarkdownFt
     autocmd!
     autocmd BufFilePre,BufRead,BufNewFile *.md,*.MD,*.mdwn,*.mkdn,*.mkd,*.mdown,*.markdown set ft=markdown
   augroup END
-]] ,
-  false
+]],
+	false
 )
 vim.cmd([[autocmd Filetype qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>]])
 vim.cmd([[autocmd Filetype qf set nobuflisted]])
@@ -30,7 +30,12 @@ vim.g.cursorhold_updatetime = 250
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = { "menu", "menuone", --[[ "noinsert",  "noselect"]] } -- mostly just for cmp
+vim.opt.completeopt = {
+	"menu",
+	"menuone",
+	"noinsert",
+	"noselect",
+} -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
@@ -78,3 +83,5 @@ vim.o.autochdir = true
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

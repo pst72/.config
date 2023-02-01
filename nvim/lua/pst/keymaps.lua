@@ -57,6 +57,14 @@ keymap("n", "<C-Down>", ":resize +3<CR>", { desc = "Resize Down" }, opts)
 keymap("n", "<C-Left>", ":vertical resize -3<CR>", { desc = "Resize Left" }, opts)
 keymap("n", "<C-Right>", ":vertical resize +3<CR>", { desc = "Resize Right" }, opts)
 
+-- Codeium keymaps
+-- vim.g.codeium_enabled = false
+vim.g.codeium_disable_keymaps = true
+
+-- Translate Keymap
+keymap("n", "tw", ":TransSelectDirection <cr>", { desc = "Translate Word/s" })
+keymap("v", "tw", ":'<'>TransSelectDirection <cr>", { desc = "Translate Word/s" })
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next Buffer" }, opts)
 keymap("n", "<S-h>", ":bprevious<CR>", { desc = "Previous Buffer" }, opts)
